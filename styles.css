@@ -1,66 +1,58 @@
 body {
     background-color: rgb(53, 53, 53);
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     height: 100vh;
 }
 
 html, body {
-    overflow: hidden; /* Prevent scrolling */
-    height: 100%; /* Full height of the viewport */
+    overflow: hidden;
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Changed back to space-between */
+    align-items: center;
+    background-color: #333;
+    padding: 10px 10px; /* Adjusted padding */
+    color: white;
+    font-size: 1.2em;
+    position: fixed;
+    top: 0;
+}
+
+#nav-buttons button, #auth-buttons button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 10px; /* Adjusted padding */
+    margin: 0 1px; /* Adjusted margin */
+    border-radius: 5px;
+}
+
+#nav-buttons button:hover, #auth-buttons button:hover {
+    background-color: #777;
 }
 
 #sidebar {
     width: 150px;
     border: 5px solid rgb(62, 61, 61);
     padding: 10px;
-    margin: 15px 0 15px 30px; /* top, right, bottom, left */
-    height: calc(90vh - 30px); /* viewport height - 15px top - 15px bottom */
+    margin: 15px 0 15px 30px;
+    height: calc(80vh - 30px);
     border-radius: 15px;
-    transform: translateX(0); /* Ensuring the default state is set */
-    transition: transform 0.3s ease-out;
+    position: fixed;
+    top: 70px;
+    left: 0; /* Added to fix the position to the left */
 }
 
-#sidebar::before {
-    position: absolute;
-    top: -10%; 
-    left: -10%; 
-    z-index: 0; 
-    content: "";
-    width: 120%; 
-    height: 120%; 
-    background: rgba(255, 255, 255, 0.1);
-    transform: rotateZ(45deg) translateX(-100%) translateY(-100%);
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    opacity: 0;
-}
-
-#hideButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    background-color: gray;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#showButton {
-    position: absolute;
-    top: 15px;
-    left: 10px; /* Adjusted to move it further to the left */
-    cursor: pointer;
-    z-index: 2;  /* This ensures the button is above other content */
-    width: 30px; /* Given a width and height */
-    height: 30px;
-    background-color: gray; /* Giving it a visible color */
-    border-radius: 50%; /* Making it a circle */
+.main {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    padding-top: 50px;
 }
